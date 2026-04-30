@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tormecanica</title>
+  <meta name="description"
+    content="Servicios profesionales de tornería, soldaduras y mantenimiento industrial en el Biobío. Trabajos según planos o muestras. Atención en terreno.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#4a9ede',
+            'primary-dark': '#3a8ed0',
+            'sky-accent': '#7dd3fc',
+            'dark-slate': '#1e3a5f',
+            'light-bg': '#f8fafc',
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" href="assets/favicon.jpg" type="image/x-icon">
+  <style>
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .hero-overlay {
+      background: linear-gradient(to bottom, rgba(30, 58, 95, 0.85), rgba(30, 58, 95, 0.7));
+    }
+
+    .sector-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(74, 158, 222, 0.15);
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.05);
+    }
+
+    .social-btn:hover {
+      transform: scale(1.1);
+    }
+
+    .nav-link:hover {
+      color: #4a9ede;
+    }
+
+    .cta-btn {
+      transition: all 0.3s ease;
+    }
+
+    .cta-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(74, 158, 222, 0.4);
+    }
+  </style>
+</head>
+
+<body class="bg-light-bg text-dark-slate font-sans">
+
+  <!-- Floating Social Buttons -->
+  <div class="fixed right-4 top-1/2 -translate-y-1/2 z-50 flex flex-col gap-3">
+    <a href="https://wa.me/56940404142" target="_blank" rel="noopener noreferrer"
+      class="social-btn w-12 h-12 bg-green-500 hover:bg-green-600 rounded-full flex items-center justify-center text-white shadow-lg transition-all duration-300">
+      <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+        <path
+          d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+      </svg>
+    </a>
+    <a href="https://www.facebook.com/profile.php?id=100063496663701" target="_blank" rel="noopener noreferrer"
+      class="social-btn w-12 h-12 bg-blue-600 hover:bg-blue-700 rounded-full flex items-center justify-center text-white shadow-lg transition-all duration-300">
+      <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+        <path
+          d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+      </svg>
+    </a>
+    <a href="https://www.instagram.com/electr1c1dad2024" target="_blank" rel="noopener noreferrer"
+      class="social-btn w-12 h-12 bg-gradient-to-br from-purple-600 via-pink-500 to-orange-400 hover:from-purple-700 hover:via-pink-600 hover:to-orange-500 rounded-full flex items-center justify-center text-white shadow-lg transition-all duration-300">
+      <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+        <path
+          d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+      </svg>
+    </a>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-sm shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <!-- Logo -->
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
+            <img src="assets/favicon.jpg" alt="Tormecanica Logo" class="w-6 h-6">
+          </div>
+          <div class="block">
+            <p class="font-bold text-dark-slate text-sm leading-tight">Tormecanica</p>
+            <p class="text-xs text-gray-500">Torneria y Soldaduras</p>
+          </div>
+        </div>
+
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex items-center gap-8">
+          <a href="#inicio" class="nav-link text-sm font-medium text-gray-600 transition-colors">Inicio</a>
+          <a href="#servicios" class="nav-link text-sm font-medium text-gray-600 transition-colors">Servicios</a>
+          <a href="#sectores" class="nav-link text-sm font-medium text-gray-600 transition-colors">Sectores</a>
+          <a href="#galeria" class="nav-link text-sm font-medium text-gray-600 transition-colors">Galería</a>
+          <a href="#contacto" class="nav-link text-sm font-medium text-gray-600 transition-colors">Contacto</a>
+        </div>
+
+        <!-- CTA Button -->
+        <a href="https://wa.me/56940404142"
+          class="hidden md:flex items-center gap-2 bg-primary hover:bg-primary-dark text-white px-4 py-2 rounded-lg font-medium text-sm transition-colors">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+            <path
+              d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+          </svg>
+          Cotizar
+        </a>
+
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors">
+          <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden md:hidden pb-4">
+        <div class="flex flex-col gap-2 pt-2 border-t border-gray-100">
+          <a href="#inicio" class="px-4 py-2 text-gray-600 hover:bg-gray-50 rounded-lg transition-colors">Inicio</a>
+          <a href="#servicios"
+            class="px-4 py-2 text-gray-600 hover:bg-gray-50 rounded-lg transition-colors">Servicios</a>
+          <a href="#sectores" class="px-4 py-2 text-gray-600 hover:bg-gray-50 rounded-lg transition-colors">Sectores</a>
+          <a href="#galeria" class="px-4 py-2 text-gray-600 hover:bg-gray-50 rounded-lg transition-colors">Galería</a>
+          <a href="#contacto" class="px-4 py-2 text-gray-600 hover:bg-gray-50 rounded-lg transition-colors">Contacto</a>
+          <a href="https://wa.me/56940404142"
+            class="mx-4 mt-2 flex items-center justify-center gap-2 bg-primary text-white px-4 py-2 rounded-lg font-medium transition-colors">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+            </svg>
+            Cotizar Ahora
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="inicio" class="relative min-h-screen flex items-center justify-center pt-16">
+    <div class="absolute inset-0">
+      <img src="assets/background.png" alt="Taller de tornería industrial" class="w-full h-full object-cover">
+      <div class="hero-overlay absolute inset-0"></div>
+    </div>
+
+    <div class="relative z-10 max-w-4xl mx-auto px-4 text-center">
+      <div class="fade-in">
+        <p class="text-sky-accent font-medium tracking-wider uppercase mb-4">Cerro Alto, Los Álamos - Biobío</p>
+        <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white mb-6 leading-tight">
+          Tornería Mecánica<br>
+          <span class="text-sky-accent">y Soldaduras</span>
+        </h1>
+        <p class="text-lg sm:text-xl text-gray-200 mb-8 max-w-2xl mx-auto">
+          Fabricación de piezas a medida, reparaciones industriales y soldaduras especializadas.
+          Trabajamos según planos técnicos o muestras físicas.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="https://wa.me/56940404142"
+            class="cta-btn inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary-dark text-white px-8 py-4 rounded-xl font-semibold text-lg">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+            </svg>
+            Solicitar Cotización
+          </a>
+          <a href="#galeria"
+            class="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white border border-white/30 px-8 py-4 rounded-xl font-semibold text-lg backdrop-blur-sm transition-colors">
+            Conoce Nuestro Trabajo
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+      <svg class="w-6 h-6 text-white/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+      </svg>
+    </div>
+  </section>
+
+  <!-- Value Props -->
+  <section id="servicios" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16 fade-in">
+        <p class="text-primary font-semibold tracking-wider uppercase mb-2">Nuestros Servicios</p>
+        <h2 class="text-3xl sm:text-4xl font-bold text-dark-slate mb-4">Soluciones Integrales de Reparaciones y
+          Mantenimiento Industrial</h2>
+        <p class="text-gray-600 max-w-2xl mx-auto">
+          Más de 15 años de experiencia respaldando a las empresas del Biobío con trabajos de precisión y calidad
+          garantizada.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Service Cards -->
+        <div
+          class="fade-in bg-light-bg rounded-2xl p-8 border border-gray-100 hover:shadow-xl transition-all duration-300 text-center">
+          <div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6 mx-auto">
+            <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-dark-slate mb-3">Tornería Convencional</h3>
+          <p class="text-gray-600">Fabricación de ejes, bujes, poleas, engranajes y piezas especiales con tolerancias
+            precisas.</p>
+        </div>
+
+        <div
+          class="fade-in bg-light-bg rounded-2xl p-8 border border-gray-100 hover:shadow-xl transition-all duration-300 text-center">
+          <div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6 mx-auto">
+            <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M9.879 16.121A3 3 0 1012.015 11L11 14H9c0 .768.293 1.536.879 2.121z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-dark-slate mb-3">Soldadura Especializada</h3>
+          <p class="text-gray-600">Soldadura MIG, TIG y arco en acero, inoxidable y aluminio. Reparaciones
+            estructurales.</p>
+        </div>
+
+        <div
+          class="fade-in bg-light-bg rounded-2xl p-8 border border-gray-100 hover:shadow-xl transition-all duration-300 text-center">
+          <div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6 mx-auto">
+            <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-dark-slate mb-3">Trabajos en Terreno</h3>
+          <p class="text-gray-600">Servicio de emergencia 24/7. Vamos a tu faena para reparaciones urgentes en sitio.
+          </p>
+        </div>
+
+        <div
+          class="fade-in bg-light-bg rounded-2xl p-8 border border-gray-100 hover:shadow-xl transition-all duration-300 text-center">
+          <div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6 mx-auto">
+            <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-dark-slate mb-3">Fabricación por Planos</h3>
+          <p class="text-gray-600">Interpretamos planos técnicos y fabricamos piezas según tus especificaciones.</p>
+        </div>
+
+        <div
+          class="fade-in bg-light-bg rounded-2xl p-8 border border-gray-100 hover:shadow-xl transition-all duration-300 text-center">
+          <div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6 mx-auto">
+            <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-dark-slate mb-3">Réplicas por Muestra</h3>
+          <p class="text-gray-600">Trae tu pieza desgastada y fabricamos una nueva idéntica con materiales de calidad .
+          </p>
+        </div>
+
+        <div
+          class="fade-in bg-light-bg rounded-2xl p-8 border border-gray-100 hover:shadow-xl transition-all duration-300 text-center">
+          <div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6 mx-auto">
+            <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-dark-slate mb-3">Entrega Rápida</h3>
+          <p class="text-gray-600">Comprometidos con los plazos de tu operación. Trabajos urgentes con prioridad.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sectors Section -->
+  <section id="sectores" class="py-20 bg-light-bg">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16 fade-in">
+        <p class="text-primary font-semibold tracking-wider uppercase mb-2">Sectores que Atendemos</p>
+        <h2 class="text-3xl sm:text-4xl font-bold text-dark-slate mb-4">Experiencia Multisectorial</h2>
+        <p class="text-gray-600 max-w-2xl mx-auto">
+          Trabajamos con las principales industrias de la región, adaptándonos a los requerimientos específicos de cada
+          sector.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <!-- Sector Cards -->
+        <div
+          class="sector-card fade-in bg-white rounded-2xl p-6 text-center cursor-pointer transition-all duration-300 border border-gray-100">
+          <div class="w-16 h-16 mx-auto mb-4 bg-green-100 rounded-2xl flex items-center justify-center">
+            <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <h3 class="font-bold text-dark-slate">Agrícola</h3>
+          <p class="text-sm text-gray-500 mt-1">Maquinaria y equipos</p>
+        </div>
+
+        <div
+          class="sector-card fade-in bg-white rounded-2xl p-6 text-center cursor-pointer transition-all duration-300 border border-gray-100">
+          <div class="w-16 h-16 mx-auto mb-4 bg-emerald-100 rounded-2xl flex items-center justify-center">
+            <svg class="w-8 h-8 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+            </svg>
+          </div>
+          <h3 class="font-bold text-dark-slate">Forestal</h3>
+          <p class="text-sm text-gray-500 mt-1">Maquinaria y equipos Forestales</p>
+        </div>
+
+        <div
+          class="sector-card fade-in bg-white rounded-2xl p-6 text-center cursor-pointer transition-all duration-300 border border-gray-100">
+          <div class="w-16 h-16 mx-auto mb-4 bg-amber-100 rounded-2xl flex items-center justify-center">
+            <svg class="w-8 h-8 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+            </svg>
+          </div>
+          <h3 class="font-bold text-dark-slate">Constructoras</h3>
+          <p class="text-sm text-gray-500 mt-1">Equipos de obra</p>
+        </div>
+
+        <div
+          class="sector-card fade-in bg-white rounded-2xl p-6 text-center cursor-pointer transition-all duration-300 border border-gray-100">
+          <div class="w-16 h-16 mx-auto mb-4 bg-blue-100 rounded-2xl flex items-center justify-center">
+            <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+            </svg>
+          </div>
+          <h3 class="font-bold text-dark-slate">Automotriz</h3>
+          <p class="text-sm text-gray-500 mt-1">Piezas y repuestos</p>
+        </div>
+
+        <div
+          class="sector-card fade-in bg-white rounded-2xl p-6 text-center cursor-pointer transition-all duration-300 border border-gray-100">
+          <div class="w-16 h-16 mx-auto mb-4 bg-cyan-100 rounded-2xl flex items-center justify-center">
+            <svg class="w-8 h-8 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+            </svg>
+          </div>
+          <h3 class="font-bold text-dark-slate">Naval</h3>
+          <p class="text-sm text-gray-500 mt-1">Embarcaciones</p>
+        </div>
+
+        <div
+          class="sector-card fade-in bg-white rounded-2xl p-6 text-center cursor-pointer transition-all duration-300 border border-gray-100">
+          <div class="w-16 h-16 mx-auto mb-4 bg-orange-100 rounded-2xl flex items-center justify-center">
+            <svg class="w-8 h-8 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
+            </svg>
+          </div>
+          <h3 class="font-bold text-dark-slate">Maquinaria Pesada</h3>
+          <p class="text-sm text-gray-500 mt-1">Excavadoras y más</p>
+        </div>
+
+        <div
+          class="sector-card fade-in bg-white rounded-2xl p-6 text-center cursor-pointer transition-all duration-300 border border-gray-100">
+          <div class="w-16 h-16 mx-auto mb-4 bg-indigo-100 rounded-2xl flex items-center justify-center">
+            <svg class="w-8 h-8 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+            </svg>
+          </div>
+          <h3 class="font-bold text-dark-slate">Electromecánica</h3>
+          <p class="text-sm text-gray-500 mt-1">Motores y bombas</p>
+        </div>
+
+        <div
+          class="sector-card fade-in bg-white rounded-2xl p-6 text-center cursor-pointer transition-all duration-300 border border-gray-100">
+          <div class="w-16 h-16 mx-auto mb-4 bg-red-100 rounded-2xl flex items-center justify-center">
+            <svg class="w-8 h-8 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+            </svg>
+          </div>
+          <h3 class="font-bold text-dark-slate">Industrial</h3>
+          <p class="text-sm text-gray-500 mt-1">Plantas y fábricas</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section id="galeria" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16 fade-in">
+        <p class="text-primary font-semibold tracking-wider uppercase mb-2">Nuestros Trabajos</p>
+        <h2 class="text-3xl sm:text-4xl font-bold text-dark-slate mb-4">Galería de Proyectos</h2>
+        <p class="text-gray-600 max-w-2xl mx-auto">
+          Algunos ejemplos de trabajos realizados para nuestros clientes en diferentes industrias.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <!-- Imágenes -->
+        <div class="gallery-item fade-in overflow-hidden rounded-2xl aspect-square">
+          <img src="assets\image1.jpg" alt="Trabajo de tornería"
+            class="w-full h-full object-cover transition-transform duration-500">
+        </div>
+        <div class="gallery-item fade-in overflow-hidden rounded-2xl aspect-square">
+          <img src="assets\image2.jpg" alt="Soldadura industrial"
+            class="w-full h-full object-cover transition-transform duration-500">
+        </div>
+        <div class="gallery-item fade-in overflow-hidden rounded-2xl aspect-square">
+          <img src="assets\image3.jpg" alt="Maquinaria"
+            class="w-full h-full object-cover transition-transform duration-500">
+        </div>
+        <div class="gallery-item fade-in overflow-hidden rounded-2xl aspect-square">
+          <img src="assets\image4.jpg" alt="Piezas mecánicas"
+            class="w-full h-full object-cover transition-transform duration-500">
+        </div>
+        <div class="gallery-item fade-in overflow-hidden rounded-2xl aspect-square">
+          <img src="assets\image5.jpg" alt="Trabajo de soldadura"
+            class="w-full h-full object-cover transition-transform duration-500">
+        </div>
+        <div class="gallery-item fade-in overflow-hidden rounded-2xl aspect-square">
+          <img src="assets\image6.jpeg" alt="Taller mecánico"
+            class="w-full h-full object-cover transition-transform duration-500">
+        </div>
+        <!-- Videos -->
+        <div class="gallery-item fade-in overflow-hidden rounded-2xl aspect-square">
+          <video autoplay muted loop playsinline class="w-full h-full object-cover">
+            <source src="assets/video7.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="gallery-item fade-in overflow-hidden rounded-2xl aspect-square">
+          <video autoplay muted loop playsinline class="w-full h-full object-cover">
+            <source src="assets/video8.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="gallery-item fade-in overflow-hidden rounded-2xl aspect-square">
+          <video autoplay muted loop playsinline class="w-full h-full object-cover">
+            <source src="assets/video9.mp4" type="video/mp4">
+          </video>
+        </div>
+        <!-- Más imágenes -->
+        <div class="gallery-item fade-in overflow-hidden rounded-2xl aspect-square">
+          <img src="assets\image10.jpeg" alt="Pieza torneada"
+            class="w-full h-full object-cover transition-transform duration-500">
+        </div>
+        <div class="gallery-item fade-in overflow-hidden rounded-2xl aspect-square">
+          <img src="assets\image11.jpeg" alt="Soldadura de precisión"
+            class="w-full h-full object-cover transition-transform duration-500">
+        </div>
+        <div class="gallery-item fade-in overflow-hidden rounded-2xl aspect-square">
+          <img src="assets\image12.jpeg" alt="Reparación de maquinaria"
+            class="w-full h-full object-cover transition-transform duration-500">
+        </div>
+        <div class="gallery-item fade-in overflow-hidden rounded-2xl aspect-square">
+          <img src="assets\image13.jpeg" alt="Reparación de maquinaria"
+            class="w-full h-full object-cover transition-transform duration-500">
+        </div>
+        <div class="gallery-item fade-in overflow-hidden rounded-2xl aspect-square">
+          <img src="assets\image14.jpeg" alt="Reparación de maquinaria"
+            class="w-full h-full object-cover transition-transform duration-500">
+        </div>
+        <div class="gallery-item fade-in overflow-hidden rounded-2xl aspect-square">
+          <img src="assets\image15.jpeg" alt="Reparación de maquinaria"
+            class="w-full h-full object-cover transition-transform duration-500">
+        </div>
+        <div class="gallery-item fade-in overflow-hidden rounded-2xl aspect-square">
+          <img src="assets\image16.jpeg" alt="Reparación de maquinaria"
+            class="w-full h-full object-cover transition-transform duration-500">
+        </div>
+        <div class="gallery-item fade-in overflow-hidden rounded-2xl aspect-square">
+          <img src="assets\image17.jpeg" alt="Reparación de maquinaria"
+            class="w-full h-full object-cover transition-transform duration-500">
+        </div>
+        <div class="gallery-item fade-in overflow-hidden rounded-2xl aspect-square">
+          <img src="assets\image18.jpeg" alt="Reparación de maquinaria"
+            class="w-full h-full object-cover transition-transform duration-500">
+        </div>
+        <div class="gallery-item fade-in overflow-hidden rounded-2xl aspect-square">
+          <img src="assets\image19.jpeg" alt="Reparación de maquinaria"
+            class="w-full h-full object-cover transition-transform duration-500">
+        </div>
+        <div class="gallery-item fade-in overflow-hidden rounded-2xl aspect-square">
+          <img src="assets\image20.jpeg" alt="Reparación de maquinaria"
+            class="w-full h-full object-cover transition-transform duration-500">
+        </div>
+      </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contacto" class="py-20 bg-dark-slate">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <!-- Contact Info -->
+        <div class="fade-in">
+          <p class="text-sky-accent font-semibold tracking-wider uppercase mb-2">Contáctanos</p>
+          <h2 class="text-3xl sm:text-4xl font-bold text-white mb-6">Estamos Listos para Ayudarte</h2>
+          <p class="text-gray-300 mb-8">
+            Ubicados en Diego Portales 1869, Cerro Alto, Los Álamos, Región del Biobío. Atendemos toda la zona y
+            realizamos trabajos en terreno.
+          </p>
+
+          <div class="space-y-6">
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center flex-shrink-0">
+                <svg class="w-6 h-6 text-sky-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-semibold text-white mb-1">Dirección</h3>
+                <p class="text-gray-300">Diego Portales 1869, Cerro Alto, Los Álamos<br>Región del Biobío, Chile</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center flex-shrink-0">
+                <svg class="w-6 h-6 text-sky-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-semibold text-white mb-1">Teléfono</h3>
+                <p class="text-gray-300">+56 9 4040 4142</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center flex-shrink-0">
+                <svg class="w-6 h-6 text-sky-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-semibold text-white mb-1">Horario</h3>
+                <p class="text-gray-300">Disponibildad 24/7<br></p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CTA Card -->
+        <div class="fade-in">
+          <div class="bg-white rounded-3xl p-8 sm:p-10">
+            <div class="text-center">
+              <div class="w-20 h-20 mx-auto mb-6 bg-green-100 rounded-full flex items-center justify-center">
+                <svg class="w-10 h-10 text-green-600" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                </svg>
+              </div>
+              <h3 class="text-2xl font-bold text-dark-slate mb-3">Cotiza por WhatsApp</h3>
+              <p class="text-gray-600 mb-8">
+                Envíanos fotos de tu pieza o planos técnicos y te respondemos con una cotización en menos de 24 horas.
+              </p>
+              <a href="https://wa.me/56940404142?text=Hola,%20necesito%20una%20cotización%20para%20un%20trabajo%20de%20tornería/soldadura."
+                target="_blank" rel="noopener noreferrer"
+                class="cta-btn inline-flex items-center justify-center gap-3 bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-xl font-semibold text-lg w-full transition-all">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                </svg>
+                Iniciar Conversación
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 py-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+        <div class="flex items-center gap-3">
+          <div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
+            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+            </svg>
+          </div>
+          <span class="text-white font-semibold">Tornería Mecánica y Soldaduras</span>
+        </div>
+        <p class="text-gray-400 text-sm">
+          &copy; 2024 Todos los derechos reservados. Cerro Alto, Los Álamos - Biobío, Chile.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    // Mobile Menu Toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      if (mobileMenu.classList.contains('hidden')) {
+        menuIcon.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+      } else {
+        menuIcon.setAttribute('d', 'M6 18L18 6M6 6l12 12');
+      }
+    });
+
+    // Close mobile menu on link click
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        menuIcon.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+      });
+    });
+
+    // Fade-in animation on scroll
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.fade-in').forEach(el => {
+      observer.observe(el);
+    });
+
+    // Navbar background on scroll
+    const navbar = document.querySelector('nav');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        navbar.classList.add('shadow-md');
+      } else {
+        navbar.classList.remove('shadow-md');
+      }
+    });
+  </script>
+</body>
+
+</html>
